@@ -4,6 +4,7 @@ Single-page Next.js app that shows:
 - Two stacked video players on the left.
 - Photo gallery + slideshow controls on the right.
 - Media loaded from a local `stuff` folder outside the project.
+- Uses hardcoded media root: `C:\Users\vm\stuff` (no `.env.local` needed).
 
 ## Folder Structure
 
@@ -15,29 +16,12 @@ stuff/
   photos/
 ```
 
-Examples:
-- Windows: `C:\Users\<your-user>\stuff`
-- Unix-like: `/user/stuff`
+Windows path used by this app:
+- `C:\Users\vm\stuff`
 
 Put supported files in each folder:
 - Videos: `.mp4`, `.webm`, `.mov`
 - Photos: `.jpg`, `.jpeg`, `.png`, `.webp`, `.gif`
-
-## Configuration
-
-1. Copy env template:
-
-```bash
-cp .env.example .env.local
-```
-
-2. Set `STUFF_ROOT` in `.env.local` to your real folder path.
-
-Windows example:
-
-```env
-STUFF_ROOT=C:\\Users\\your-user\\stuff
-```
 
 ## Run
 
@@ -69,4 +53,4 @@ Open `http://localhost:3000`.
 ## Notes
 
 - This app is intended for localhost usage with local files.
-- No additional `.env` keys are required beyond `STUFF_ROOT`.
+- No `.env.local` setup is required.

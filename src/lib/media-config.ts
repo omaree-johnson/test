@@ -2,12 +2,10 @@ import path from "node:path";
 
 export type MediaKind = "videos" | "photos";
 
-const DEFAULT_STUFF_ROOT =
-  process.platform === "win32" ? "C:\\Users\\Public\\stuff" : "/user/stuff";
+const DEFAULT_STUFF_ROOT = "C:\\Users\\vm\\stuff";
 
 export function getStuffRoot(): string {
-  const configured = process.env.STUFF_ROOT?.trim();
-  return path.resolve(configured || DEFAULT_STUFF_ROOT);
+  return path.resolve(DEFAULT_STUFF_ROOT);
 }
 
 export function getKindDir(kind: MediaKind): string {
